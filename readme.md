@@ -1,7 +1,7 @@
-grace [![Build Status](https://secure.travis-ci.org/facebookgo/grace.png)](https://travis-ci.org/facebookgo/grace)
+regrace [![Build Status](https://secure.travis-ci.org/facebookgo/grace.png)](https://travis-ci.org/facebookgo/grace)
 =====
 
-Package grace provides a library that makes it easy to build socket
+Package regrace provides a library that makes it easy to build socket
 based servers that can be gracefully terminated & restarted (that is,
 without dropping any connections).
 
@@ -21,7 +21,7 @@ https://github.com/facebookgo/grace/blob/master/gracedemo/demo.go
 
 1. Install the demo application
 
-        go get github.com/facebookgo/grace/gracedemo
+        go get github.com/coderme/regrace
 
 1. Start it in the first terminal
 
