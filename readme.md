@@ -1,4 +1,4 @@
-regrace [![Build Status](https://secure.travis-ci.org/facebookgo/grace.png)](https://travis-ci.org/facebookgo/grace)
+regrace
 =====
 
 Package regrace provides a library that makes it easy to build socket
