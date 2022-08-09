@@ -54,11 +54,21 @@ func newApp(servers []*http.Server) *app {
 
 func (a *app) listen() error {
 	for _, s := range a.servers {
-		// TODO: default addresses
+		if strings.HasPrefix(a.Addr, "@") || strings.HasPrefix(a.Addr, "/"){
+			l, err := a.net.Listen("unix", s.Addr)
+			if err != nil {
+				return err 
+			}
+			
+			a.listeners = append(a.listeners, l)
+			continue
+		}
+		
 		l, err := a.net.Listen("tcp", s.Addr)
 		if err != nil {
 			return err
 		}
+		
 		if s.TLSConfig != nil {
 			l = tls.NewListener(l, s.TLSConfig)
 		}
